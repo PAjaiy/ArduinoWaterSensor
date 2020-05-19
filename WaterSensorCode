@@ -1,0 +1,19 @@
+#define sensor A1
+
+void setup() 
+{
+  Serial.begin(9600);
+  pinMode(sensor, INPUT);
+}
+
+void loop() 
+{ 
+  if(analogRead(sensor) >= 70 /*change "70" according to your value*/)
+  {
+    Serial.println("Water!");
+  }
+  else if(analogRead(sensor) < 70 /*change "70" according to your value*/)
+  {
+    Serial.println("No Water!");
+  }
+}
